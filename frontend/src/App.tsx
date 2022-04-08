@@ -2,37 +2,110 @@ import * as React from "react"
 import {
   ChakraProvider,
   Box,
-  Text,
-  Link,
-  VStack,
-  Code,
   Grid,
   theme,
+  GridItem,
+  Button,
+  Flex,
+  Spacer,
+  Center,
+  VStack,
+  Text,
+  Heading
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
 import { Logo } from "./Logo"
+import { 
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
 
-export const App = () => (
-  <ChakraProvider theme={theme}>
-    <Box textAlign="center" fontSize="xl">
-      <Grid minH="100vh" p={3}>
-        <ColorModeSwitcher justifySelf="flex-end" />
-        <VStack spacing={8}>
-          <Logo h="40vmin" pointerEvents="none" />
-          <Text>
-            Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
-          </Text>
-          <Link
-            color="teal.500"
-            href="https://chakra-ui.com"
-            fontSize="2xl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn Chakra
-          </Link>
-        </VStack>
-      </Grid>
-    </Box>
-  </ChakraProvider>
-)
+export const App = () => {
+  const { isLoading, error, data } = useQuery('getAllBlogs', () =>
+    fetch('http://localhost:8000/blogs').then(res =>
+      res.json()
+    )
+  )
+
+  return(
+    <ChakraProvider theme={theme}>
+      <Box textAlign="left" fontSize="l">
+        <Grid
+          p={4}
+          templateRows='repeat(2, 1fr)'
+          templateColumns='repeat(2, 1fr)'
+        >
+          <GridItem colSpan={2} bg='transparent'>
+            <Flex>
+              <Logo
+                h="8vmin"
+                pointerEvents="none"
+              />
+              <Spacer/>
+              <Center>
+                <Button mr={4} bg='transparent'>
+                  Projects
+                </Button>
+                <Button mr={4} bg='transparent'>
+                  Experience
+                </Button>
+                <Button mr={4} bg='transparent' onClick={() => {}}>
+                  Blog
+                </Button>
+                <Button mr={4} bg='transparent'>
+                  Login
+                </Button>
+                <ColorModeSwitcher mr={4} />
+              </Center>
+            </Flex>
+          </GridItem>
+          <GridItem colSpan={2} bg='lightblue'>
+            <VStack alignItems='left'>
+              <Heading>
+                Lorem ipsum
+              </Heading>
+              <Heading size='4xl'>
+                Lorem ipsum
+              </Heading>
+              <Text>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor ratione labore amet qui, cumque similique consequatur inventore aliquid modi tempora libero cupiditate quis vel esse veritatis molestias aperiam impedit earum?
+              </Text>
+            </VStack>
+          </GridItem>
+
+          <GridItem bg='tomato'>
+            <Heading>
+              About me
+            </Heading>
+            <Text>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium minima reiciendis odit quidem dolor quod quo accusantium voluptatem excepturi alias eaque at aperiam sequi, repellat dolore iste saepe inventore sunt?
+            </Text>
+          </GridItem>
+          <GridItem>
+            <Center>
+              Picture placeholder
+            </Center>
+          </GridItem>
+          <GridItem colSpan={2} bg='turquoise'>
+            <Heading>
+              Experience
+            </Heading>
+            <VStack alignItems='left' pt={4} pb={4}>
+              <Heading size='l'>
+                Experience 1
+              </Heading>
+              <Heading size='l'>
+                Experience 2
+              </Heading>
+              <Heading size='l'>
+                Experience 3
+              </Heading>
+            </VStack>
+          </GridItem>
+        </Grid>
+      </Box>
+    </ChakraProvider>
+  )
+}
