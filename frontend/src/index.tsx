@@ -1,21 +1,14 @@
 import { ColorModeScript } from "@chakra-ui/react"
 import * as React from "react"
 import ReactDOM from "react-dom"
-import { QueryClient, QueryClientProvider } from "react-query"
-import { ReactQueryDevtools } from "react-query/devtools"
 import { App } from "./App"
 import reportWebVitals from "./reportWebVitals"
 import * as serviceWorker from "./serviceWorker"
 
-const queryClient = new QueryClient()
-
 ReactDOM.render(
   <React.StrictMode>
     <ColorModeScript />
-    <QueryClientProvider client={queryClient} contextSharing={true}>
-      <App />
-      <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
+    <App />
   </React.StrictMode>,
   document.getElementById("root"),
 )
