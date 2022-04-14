@@ -24,7 +24,9 @@ app.add_middleware(
 
 @app.get('/blogs')
 async def read_blogs():
-    return {"test": "test"}
+    with open("content/blogs.json") as f:
+        data = f.read()
+        return data
 
 class SPAStaticFiles(StaticFiles):
     async def get_response(self, path: str, scope):

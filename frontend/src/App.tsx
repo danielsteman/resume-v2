@@ -13,21 +13,19 @@ import {
   Text,
   Heading
 } from "@chakra-ui/react"
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { Logo } from "./Logo"
-import { 
-  QueryClient,
-  QueryClientProvider,
+import { ColorModeSwitcher } from "./components/ColorModeSwitcher"
+import { Logo } from "./components/Logo"
+import {
   useQuery,
 } from 'react-query'
-import { ReactQueryDevtools } from 'react-query/devtools'
+import { getAllBlogs } from "./services/blogs"
+import { Link as RouteLink} from "react-router-dom"
 
 export const App = () => {
-  const { isLoading, error, data } = useQuery('getAllBlogs', () =>
-    fetch('http://localhost:8000/blogs').then(res =>
-      res.json()
-    )
-  )
+
+  const { isLoading, error, data } = useQuery('getAllBlogs', getAllBlogs)
+
+  console.log(data)
 
   return(
     <ChakraProvider theme={theme}>
@@ -51,8 +49,10 @@ export const App = () => {
                 <Button mr={4} bg='transparent'>
                   Experience
                 </Button>
-                <Button mr={4} bg='transparent' onClick={() => {}}>
-                  Blog
+                <Button mr={4} bg='transparent'>
+                  <RouteLink to="/blog">
+                    Blog
+                  </RouteLink>
                 </Button>
                 <Button mr={4} bg='transparent'>
                   Login
