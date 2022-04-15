@@ -1,18 +1,18 @@
-import { ColorModeScript } from "@chakra-ui/react"
-import * as React from "react"
-import ReactDOM from "react-dom"
-import { QueryClient, QueryClientProvider } from "react-query"
-import { ReactQueryDevtools } from "react-query/devtools"
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { App } from "./App"
-import { Blog } from "./routes/blog"
+import { ColorModeScript } from '@chakra-ui/react';
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { App } from './App';
+import Blog from './routes/Blog';
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
 ReactDOM.render(
   <React.StrictMode>
     <ColorModeScript />
-    <QueryClientProvider client={queryClient} contextSharing={true}>
+    <QueryClientProvider client={queryClient} contextSharing>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />} />
@@ -22,5 +22,5 @@ ReactDOM.render(
       </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>,
-  document.getElementById("root"),
-)
+  document.getElementById('root'),
+);

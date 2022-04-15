@@ -15,18 +15,9 @@ import {
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./components/ColorModeSwitcher"
 import { Logo } from "./components/Logo"
-import {
-  useQuery,
-} from 'react-query'
-import { getAllBlogs } from "./services/blogs"
 import { Link as RouteLink} from "react-router-dom"
 
 export const App = () => {
-
-  const { isLoading, error, data } = useQuery('getAllBlogs', getAllBlogs)
-
-  console.log(data)
-
   return(
     <ChakraProvider theme={theme}>
       <Box textAlign="left" fontSize="l">
