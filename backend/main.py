@@ -1,6 +1,6 @@
 from sys import prefix
+from api.static.spastaticfiles import SPAStaticFiles
 from fastapi import FastAPI
-from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from api.api import api_router
 
@@ -25,12 +25,5 @@ app.add_middleware(
 )
 
 app.include_router(api_router, prefix="/blog")
-
-class SPAStaticFiles(StaticFiles):
-    async def get_response(self, path: str, scope):
-        response = await super().get_response(path, scope)
-        if response.status_code == 404:
-            response = await super().get_response('.', scope)
-        return response
 
 app.mount('/', SPAStaticFiles(directory=static_path, html=True), name='app')
