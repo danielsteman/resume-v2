@@ -1,6 +1,8 @@
+from sys import prefix
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
+from api.api import api_router
 
 from pathlib import Path
 
@@ -22,11 +24,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get('/blogs')
-async def read_blogs():
-    with open("content/blogs.json") as f:
-        data = f.read()
-        return data
+app.include_router(api_router, prefix="/blog")
 
 class SPAStaticFiles(StaticFiles):
     async def get_response(self, path: str, scope):
