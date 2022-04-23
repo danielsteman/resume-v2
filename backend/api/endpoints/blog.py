@@ -7,5 +7,10 @@ router = APIRouter()
 async def read_blog_post(blog_post_id: int):
     return {
         "id": blog_post_id,
-        "text": "lorem ipsum"
+        "title": "title",
+        "body": "lorem ipsum"
     }
+
+@router.post("/blog/")
+async def create_blog_post(blog_post: BlogPost):
+    return blog_post
