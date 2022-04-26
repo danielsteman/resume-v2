@@ -3,5 +3,8 @@ from pydantic import (
     PostgresDsn,
 )
 
+
 class Settings(BaseSettings):
-    pg_dsn: PostgresDsn = 'postgresql://postgres:test@localhost:5432/postgres'
+    PG_DSN: PostgresDsn = 'postgresql://postgres:test@localhost:5432/postgres'
+
+settings = Settings()

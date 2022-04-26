@@ -3,6 +3,7 @@ from api.static.spastaticfiles import SPAStaticFiles
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from api.api import api_router
+from database import SessionLocal
 
 from pathlib import Path
 
