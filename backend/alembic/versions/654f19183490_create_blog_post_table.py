@@ -19,7 +19,7 @@ depends_on = None
 def upgrade():
     op.create_table(
         'blog_post',
-        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('id', sa.Integer, primary_key=True, index=True),
         sa.Column('title', sa.String(250), nullable=False),
         sa.Column('body', sa.Text, nullable=False),
         sa.Column('tags', sa.ARRAY(sa.String(40))),
