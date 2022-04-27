@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from 'react';
 import {
   ChakraProvider,
   Box,
@@ -11,53 +11,53 @@ import {
   Center,
   VStack,
   Text,
-  Heading
-} from "@chakra-ui/react"
-import { ColorModeSwitcher } from "./components/ColorModeSwitcher"
-import { Logo } from "./components/Logo"
-import { Link as RouteLink} from "react-router-dom"
+  Heading,
+} from '@chakra-ui/react';
+import { Link as RouteLink } from 'react-router-dom';
+import { ColorModeSwitcher } from './components/ColorModeSwitcher';
+import { Logo } from './components/Logo';
 
-export const App = () => {
-  return(
+const App = () => {
+  return (
     <ChakraProvider theme={theme}>
       <Box textAlign="left" fontSize="l">
         <Grid
           p={4}
-          templateRows='repeat(2, 1fr)'
-          templateColumns='repeat(2, 1fr)'
+          templateRows="repeat(2, 1fr)"
+          templateColumns="repeat(2, 1fr)"
         >
-          <GridItem colSpan={2} bg='transparent'>
+          <GridItem colSpan={2} bg="transparent">
             <Flex>
               <Logo
                 h="8vmin"
                 pointerEvents="none"
               />
-              <Spacer/>
+              <Spacer />
               <Center>
-                <Button mr={4} bg='transparent'>
+                <Button mr={4} bg="transparent">
                   Projects
                 </Button>
-                <Button mr={4} bg='transparent'>
+                <Button mr={4} bg="transparent">
                   Experience
                 </Button>
-                <Button mr={4} bg='transparent'>
+                <Button mr={4} bg="transparent">
                   <RouteLink to="/blog">
                     Blog
                   </RouteLink>
                 </Button>
-                <Button mr={4} bg='transparent'>
+                <Button mr={4} bg="transparent">
                   Login
                 </Button>
                 <ColorModeSwitcher mr={4} />
               </Center>
             </Flex>
           </GridItem>
-          <GridItem colSpan={2} bg='lightblue'>
-            <VStack alignItems='left'>
+          <GridItem colSpan={2} bg="lightblue">
+            <VStack alignItems="left">
               <Heading>
                 Lorem ipsum
               </Heading>
-              <Heading size='4xl'>
+              <Heading size="4xl">
                 Lorem ipsum
               </Heading>
               <Text>
@@ -65,8 +65,7 @@ export const App = () => {
               </Text>
             </VStack>
           </GridItem>
-
-          <GridItem bg='tomato'>
+          <GridItem bg="tomato">
             <Heading>
               About me
             </Heading>
@@ -79,18 +78,18 @@ export const App = () => {
               Picture placeholder
             </Center>
           </GridItem>
-          <GridItem colSpan={2} bg='turquoise'>
+          <GridItem colSpan={2} bg="turquoise">
             <Heading>
               Experience
             </Heading>
-            <VStack alignItems='left' pt={4} pb={4}>
-              <Heading size='l'>
+            <VStack alignItems="left" pt={4} pb={4}>
+              <Heading size="l">
                 Experience 1
               </Heading>
-              <Heading size='l'>
+              <Heading size="l">
                 Experience 2
               </Heading>
-              <Heading size='l'>
+              <Heading size="l">
                 Experience 3
               </Heading>
             </VStack>
@@ -98,5 +97,7 @@ export const App = () => {
         </Grid>
       </Box>
     </ChakraProvider>
-  )
+  );
 }
+
+export default App;
