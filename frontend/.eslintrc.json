@@ -15,7 +15,7 @@
         },
         "ecmaVersion": "latest",
         "sourceType": "module",
-        "project": "frontend/tsconfig.json"
+        "project": "tsconfig.json"
     },
     "plugins": [
         "react",
@@ -36,6 +36,7 @@
         "max-len": 0,
         "react/function-component-definition": [2, {
             "namedComponents": "arrow-function"
-        }]
+        }],
+        "react/jsx-props-no-spreading": "off"
     }
 }

@@ -14,8 +14,8 @@ import {
   Heading,
 } from '@chakra-ui/react';
 import { Link as RouteLink } from 'react-router-dom';
-import { ColorModeSwitcher } from './components/ColorModeSwitcher';
-import { Logo } from './components/Logo';
+import ColorModeSwitcher from './components/ColorModeSwitcher';
+import Logo from './components/Logo';
 
 const App = () => (
   <ChakraProvider theme={theme}>
