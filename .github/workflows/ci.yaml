@@ -6,6 +6,18 @@ on:
       - "*"
 
 jobs:
+  frontend_build:
+    name: frontend build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    - run: npm ci
+      working-directory: frontend
+    - run: npm run build
+      working-directory: frontend
   backend_build:
     name: backend build
     runs-on: ubuntu-latest
@@ -29,15 +41,3 @@ jobs:
     - name: Run tests
       run: PYTHONPATH=. pytest
       working-directory: backend
-  frontend_build:
-    name: frontend build
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-    - run: npm ci
-      working-directory: frontend
-    - run: npm run build
-      working-directory: frontend
