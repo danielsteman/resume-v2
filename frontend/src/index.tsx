@@ -6,6 +6,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import App from './App';
 import Blog from './routes/Blog';
+import Login from './routes/Login';
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ ReactDOM.render(
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
         <ReactQueryDevtools initialIsOpen={false} />
       </BrowserRouter>

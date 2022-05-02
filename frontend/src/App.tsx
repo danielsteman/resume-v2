@@ -45,7 +45,9 @@ const App = () => (
                 </RouteLink>
               </Button>
               <Button mr={4} bg="transparent">
-                Login
+                <RouteLink to="/login">
+                  Login
+                </RouteLink>
               </Button>
               <ColorModeSwitcher mr={4} />
             </Center>
