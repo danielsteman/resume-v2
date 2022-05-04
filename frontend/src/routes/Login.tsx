@@ -1,19 +1,18 @@
 import React from 'react';
 import { Link as RouteLink } from 'react-router-dom';
 import {
-  theme,
   Text,
   Box,
   Heading,
-  ChakraProvider,
   Center,
   VStack,
   Input,
 } from '@chakra-ui/react';
 import Logo from '../components/Logo';
+import PageBase from '../components/PageBase';
 
 const Login = () => (
-  <ChakraProvider theme={theme}>
+  <PageBase>
     <Box textAlign="center" fontSize="l" p={8}>
       <Center>
         <Logo
@@ -40,7 +39,7 @@ const Login = () => (
         </Box>
       </Center>
     </Box>
-  </ChakraProvider>
+  </PageBase>
 );
 
 export default Login;
