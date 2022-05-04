@@ -16,6 +16,8 @@ import {
 import { Link as RouteLink } from 'react-router-dom';
 import ColorModeSwitcher from './components/ColorModeSwitcher';
 import Logo from './components/Logo';
+import ExperienceBlock from './components/ExperienceBlock';
+import Projects from './components/Projects';
 
 const App = () => (
   <ChakraProvider theme={theme}>
@@ -56,10 +58,10 @@ const App = () => (
         <GridItem colSpan={2} bg="lightblue">
           <VStack alignItems="left">
             <Heading>
-              Lorem ipsum
+              Hi there, I&apos;m
             </Heading>
             <Heading size="4xl">
-              Lorem ipsum
+              Daniel Steman
             </Heading>
             <Text>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor ratione labore amet qui, cumque similique consequatur inventore aliquid modi tempora libero cupiditate quis vel esse veritatis molestias aperiam impedit earum?
@@ -79,21 +81,19 @@ const App = () => (
             Picture placeholder
           </Center>
         </GridItem>
-        <GridItem colSpan={2} bg="turquoise">
+        <GridItem colSpan={2} bg="lightblue">
           <Heading>
             Experience
           </Heading>
-          <VStack alignItems="left" pt={4} pb={4}>
-            <Heading size="l">
-              Experience 1
-            </Heading>
-            <Heading size="l">
-              Experience 2
-            </Heading>
-            <Heading size="l">
-              Experience 3
-            </Heading>
-          </VStack>
+        </GridItem>
+        <GridItem bg="lightgreen">
+          <ExperienceBlock title="experience 1" description="Lorem bla die bla" from="January 2021" to="February 2021" />
+        </GridItem>
+        <GridItem bg="lightgrey">
+          <ExperienceBlock title="experience 2" description="Lorem bla die bla" from="January 2022" to="February 2022" />
+        </GridItem>
+        <GridItem colSpan={2} bg="turquoise">
+          <Projects sectionTitle="Projects" entries={[]} />
         </GridItem>
       </Grid>
     </Box>

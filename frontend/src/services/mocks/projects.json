@@ -1,0 +1,22 @@
+{
+  "projects": {
+    "sectionTitle": "Projects",
+    "projectEntries": [
+      {
+        "title": "project 1",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam animi vero omnis eligendi mollitia, temporibus at odio maxime iure labore autem dolore quasi sapiente, eum aliquam quam totam quod optio.",
+        "tags": ["python", "c++", "node.js"]
+      },
+      {
+        "title": "project 2",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam animi vero omnis eligendi mollitia, temporibus at odio maxime iure labore autem dolore quasi sapiente, eum aliquam quam totam quod optio.",
+        "tags": ["c-sharp", "c", "haskell"]
+      },
+      {
+        "title": "project 3",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam animi vero omnis eligendi mollitia, temporibus at odio maxime iure labore autem dolore quasi sapiente, eum aliquam quam totam quod optio.",
+        "tags": ["rust", "assembly", "bash"]
+      }
+    ]
+  }
+}
