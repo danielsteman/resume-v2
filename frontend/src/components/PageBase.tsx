@@ -16,10 +16,12 @@ const PageBase: React.FC = ({ children }) => (
   <ChakraProvider theme={theme}>
     <Box textAlign="left" fontSize="l" p={4}>
       <Flex>
-        <Logo
-          h="8vmin"
-          pointerEvents="none"
-        />
+        <RouteLink to="/">
+          <Logo
+            h="8vmin"
+            pointerEvents="none"
+          />
+        </RouteLink>
         <Spacer />
         <Center>
           <Button mr={4} bg="transparent">

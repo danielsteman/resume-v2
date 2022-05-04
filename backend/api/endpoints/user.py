@@ -14,7 +14,7 @@ def get_db():
         db.close()
 
 @router.post("/login")
-async def login(user: User, db: Session = Depends(get_db)):
+async def login_user(user: User, db: Session = Depends(get_db)):
     return
 
 @router.post("/signup")

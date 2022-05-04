@@ -8,18 +8,11 @@ import {
   VStack,
   Input,
 } from '@chakra-ui/react';
-import Logo from '../components/Logo';
 import PageBase from '../components/PageBase';
 
 const Login = () => (
   <PageBase>
     <Box textAlign="center" fontSize="l" p={8}>
-      <Center>
-        <Logo
-          h="8vmin"
-          pointerEvents="none"
-        />
-      </Center>
       <Heading>Log in to your account</Heading>
       <Text>
         Don&apos;t have an account?
