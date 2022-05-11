@@ -1,60 +1,25 @@
 import React from 'react';
 import {
-  ChakraProvider,
   Box,
   Grid,
-  theme,
   GridItem,
-  Button,
-  Flex,
-  Spacer,
   Center,
   VStack,
   Text,
   Heading,
 } from '@chakra-ui/react';
-import { Link as RouteLink } from 'react-router-dom';
-import ColorModeSwitcher from './components/ColorModeSwitcher';
-import Logo from './components/Logo';
 import ExperienceBlock from './components/ExperienceBlock';
 import Projects from './components/Projects';
+import PageBase from './components/PageBase';
 
 const App = () => (
-  <ChakraProvider theme={theme}>
+  <PageBase>
     <Box textAlign="left" fontSize="l">
       <Grid
         p={4}
         templateRows="repeat(2, 1fr)"
         templateColumns="repeat(2, 1fr)"
       >
-        <GridItem colSpan={2} bg="transparent">
-          <Flex>
-            <Logo
-              h="8vmin"
-              pointerEvents="none"
-            />
-            <Spacer />
-            <Center>
-              <Button mr={4} bg="transparent">
-                Projects
-              </Button>
-              <Button mr={4} bg="transparent">
-                Experience
-              </Button>
-              <Button mr={4} bg="transparent">
-                <RouteLink to="/blog">
-                  Blog
-                </RouteLink>
-              </Button>
-              <Button mr={4} bg="transparent">
-                <RouteLink to="/login">
-                  Login
-                </RouteLink>
-              </Button>
-              <ColorModeSwitcher mr={4} />
-            </Center>
-          </Flex>
-        </GridItem>
         <GridItem colSpan={2} bg="lightblue">
           <VStack alignItems="left">
             <Heading>
@@ -97,7 +62,7 @@ const App = () => (
         </GridItem>
       </Grid>
     </Box>
-  </ChakraProvider>
+  </PageBase>
 );
 
 export default App;
