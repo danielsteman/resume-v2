@@ -14,19 +14,19 @@ import PageBase from './components/PageBase';
 
 const App = () => (
   <PageBase>
-    <Box textAlign="left" fontSize="l">
+    <Box textAlign="left" fontSize="l" px="8em" py="5em">
       <Grid
-        p={4}
+        gap="1em"
         templateRows="repeat(2, 1fr)"
         templateColumns="repeat(2, 1fr)"
       >
         <GridItem colSpan={2} bg="lightblue">
           <VStack alignItems="left">
-            <Heading>
+            <Heading size="lg">
               Hi there, I&apos;m
             </Heading>
-            <Heading size="4xl">
-              Daniel Steman
+            <Heading size="xl">
+              Daniel Steman.
             </Heading>
             <Text>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor ratione labore amet qui, cumque similique consequatur inventore aliquid modi tempora libero cupiditate quis vel esse veritatis molestias aperiam impedit earum?
@@ -34,7 +34,7 @@ const App = () => (
           </VStack>
         </GridItem>
         <GridItem bg="tomato">
-          <Heading>
+          <Heading size="lg">
             About me
           </Heading>
           <Text>
@@ -47,7 +47,7 @@ const App = () => (
           </Center>
         </GridItem>
         <GridItem colSpan={2} bg="lightblue">
-          <Heading>
+          <Heading size="lg">
             Experience
           </Heading>
         </GridItem>

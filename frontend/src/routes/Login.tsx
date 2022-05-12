@@ -13,7 +13,7 @@ import PageBase from '../components/PageBase';
 
 const Login = () => (
   <PageBase>
-    <Center display="flex">
+    <Center display="flex" mt="9em">
       <Box
         textAlign="center"
         fontSize="l"
@@ -23,7 +23,7 @@ const Login = () => (
         rounded="xl"
       >
         <VStack p={4}>
-          <Heading>Log in to your account</Heading>
+          <Heading size="lg" mb="1em">Log in to your account</Heading>
           <Text>
             Don&apos;t have an account?
             {' '}
@@ -36,10 +36,10 @@ const Login = () => (
         </VStack>
         <Center>
           <Box textAlign="left">
-            <VStack alignItems="left" p={4}>
+            <VStack alignItems="left">
               <Input bgColor="#EDF2F7" border={0} defaultValue="Email" minW="15em" />
               <Input bgColor="#EDF2F7" border={0} defaultValue="Password" />
-              <Button colorScheme="blue" mt={12}>Submit</Button>
+              <Button colorScheme="blue">Submit</Button>
             </VStack>
           </Box>
         </Center>

@@ -6,15 +6,15 @@ import {
   Spacer,
   Center,
   ChakraProvider,
-  theme,
 } from '@chakra-ui/react';
 import { Link as RouteLink } from 'react-router-dom';
 import ColorModeSwitcher from './ColorModeSwitcher';
 import Logo from './Logo';
+import customTheme from '../themes/theme';
 
 const PageBase: React.FC = ({ children }) => (
-  <ChakraProvider theme={theme}>
-    <Box textAlign="left" fontSize="l" p={4}>
+  <ChakraProvider theme={customTheme}>
+    <Box textAlign="left" fontSize="l" py={4} px={8}>
       <Flex>
         <RouteLink to="/">
           <Logo

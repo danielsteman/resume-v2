@@ -12,10 +12,10 @@ const ExperienceBlock: React.FC<Props> = ({
   title, description, from, to,
 }) => (
   <VStack alignItems="left" pt={4} pb={4}>
-    <Heading size="xl">
+    <Heading size="md">
       {title}
     </Heading>
-    <Heading size="m">
+    <Heading size="s">
       {from}
       {' '}
       -

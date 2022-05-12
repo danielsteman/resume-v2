@@ -9,7 +9,7 @@ interface ProjectProps {
 
 const Projects: React.FC<ProjectProps> = ({ sectionTitle, entries }) => (
   <div>
-    <Heading size="xl">
+    <Heading size="lg">
       {sectionTitle}
     </Heading>
     <VStack alignItems="left" pt={4} pb={4}>
