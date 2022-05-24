@@ -1,2 +1,2 @@
 # resume-v2
-Experiment with React Typescript, Chakra UI, FastAPI and Alembic.
+Experiment with React Typescript, Chakra UI, FastAPI, Alembic and Postgres.
